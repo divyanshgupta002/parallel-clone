@@ -1,0 +1,178 @@
+* {
+  margin: 0; /*set the default padding and margin to zero*/
+  padding: 0;
+  box-sizing: border-box; /*made the containers sizing to border box type*/
+}
+.container {
+  /*created this container so the the whole content is aligned in a order*/
+  width: 1200px;
+  margin: auto; /*used to center the container div horizontally*/
+}
+/* here the fonts required are extracted from their files and provided with a name to use further */
+@font-face {
+  font-family: WorkSans;
+  src: url(/parallel-clone/fonts/WorkSans-Regular.woff);
+}
+@font-face {
+  font-family: WorkSans-m;
+  src: url(/parallel-clone/fonts/WorkSans-Medium.woff);
+}
+@font-face {
+  font-family: WorkSans-sb;
+  src: url(/parallel-clone/fonts/WorkSans-SemiBold.woff);
+}
+@font-face {
+  font-family: SharpGrotesk;
+  src: url(/parallel-clone/fonts/SharpGrotesk-Medium.woff);
+}
+
+/* here the styling of the header starts */
+header {
+  display: flex; /*used to bring the containers side by side and provide proper spacing between them */
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 0; /*provided a top and bottom padding for header to make it more appealing*/
+  font-family: WorkSans-m; /*here the font for all the text of header is assinged*/
+}
+header a {
+  /* styled all the anchor tags accordintg to design */
+  text-decoration: none;
+  color: #000;
+}
+header .item1,
+header .item2 {
+  /* used flex to center and provide spacing between different elements on the left side, right side of navbar */
+  display: flex;
+  align-items: center;
+  gap: 30px;/* this is the gutter space provided */
+}
+header .item2 .first {
+  /* created this subclass to provide the line on the right side of the element */
+  padding-right: 30px;
+  border-right: 2px solid rgb(210, 210, 210);/* used to create the line present at the right of first companies */
+}
+header .item2 button {
+  /* provided padding and various styling to the get started button present on the right side of the navbar */
+  padding: 10px 24px;
+  border-radius: 8px;
+  background-color: rgb(255, 213, 96);
+  border: 2px solid black;
+  font-family: WorkSans-m;
+}
+/* here the styling of header ends  */
+
+/* here the styling of the main starts */
+main {
+  background:rgb(255, 247, 241) url(/parallel-clone/images/img2.png); /* here i have defined the background color and used background image to center the image and also so that other images can hover over it */
+  background-position: center;
+  background-size: 300px auto;/* here i provided the height of the center image according to the requirements of the design */
+  background-repeat: no-repeat;/* this property helps so that the image only appear once in the center and not repeating itself in the remaining area  */
+}
+main .content .top {
+  /* used to style the buttons present at the top of main page  */
+  width: fit-content; /* used to center the buttons  */
+  margin: auto;
+  padding: 30px 0;
+}
+main .content .top button {
+  /* here i have styled the buttons of the top class according to the design requirements  */
+  font-family: WorkSans-m;
+  padding: 6px 10px;
+  margin-right: 10px;
+  border: 1px solid rgb(221, 219, 217);
+  border-radius: 20px;
+  background-color: transparent;
+}
+main .content .top button:hover {
+  /* changed the colors of border and background when any button is hovered using the pseudo element  */
+  border-color: black;
+  background-color: rgb(255, 213, 96);
+}
+main .content .heading {
+  /* this is to define the font of the heading present in the main  */
+  font-family: SharpGrotesk;
+}
+main .content .heading img {
+  /* used to control the underline image of the heading  */
+  margin-top: 10px;
+  width: 200px;
+}
+main .content .parts {
+  /* here i have divided the main remaining contents into two parts and provided them proper spacing as per design requirements */
+  display: flex;
+  justify-content: space-between;
+  font-family: SharpGrotesk;
+  font-size: 30px;
+}
+main .content .parts .lside {
+  /* given the lside 50% of the width of parts class  */
+  width: 600px;
+}
+main .content .parts .lside #parallel-2 {
+  /* here the width of image with id parallel-2 is defined as per the requirements */
+  width: 500px;
+}
+main .content .parts .lside #img1 {
+  /* here the width of image with id img1 is defined as per the requirements */
+  width: 400px;
+}
+main .content .parts .rside {
+  /* here the right side of the parts class is given width 40% of the containers width  */
+  width: 480px;
+}
+main .content .parts .rside .mail {
+  /* here the mail part of right side is aligned at the end by aligning it in the center and providing it top spacing  */
+  width: fit-content;
+  margin: auto;
+  margin-top: 40px;
+  padding: 80px;
+}
+main .content .parts .rside .mail p {
+  /* reduced the fontsize of paragraph tag according to the design */
+  font-size: 20px;
+}
+main .content .parts .rside .mail input {
+  /* the input field of mail part is styled according to the design */
+  border-radius: 6px;
+  border: 1px solid black;
+  width: 300px;
+  padding: 10px;
+}
+main .content .parts .rside .mail button {
+  /* here the sign up button at bottom of the mail part  */
+  padding: 10px 30px;
+  margin-top: 10px;
+  background-color: rgb(255, 213, 96);
+  border-radius: 6px;
+  border: 1px solid black;
+  font-family: WorkSans-m;
+}
+/* here the styling of main class ends  */
+
+@media only screen and (max-width:1400px){
+  .container{
+    width: 1200px;
+  }
+}
+@media only screen and (min-width:1400px){
+  .container{
+    width: 1320px;
+  }
+  /* redesigned the code for width greater than 1400px  */
+  main{
+    background-size: 320px auto;
+  }
+  main .content .parts .lside {
+    width: 700px;
+  }
+  main .content .parts .lside #parallel-2 {
+    width: 560px;
+  }
+  main .content .parts .lside #img1 {
+    width: 440px;
+  }
+  main .content .parts .rside {
+    width: 530px;
+    margin-top: 10px;
+  }
+}
